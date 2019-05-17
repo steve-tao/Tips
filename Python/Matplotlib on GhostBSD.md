@@ -1,9 +1,9 @@
 # Install matplotlib on GhostBSD 19.04
 
 ## Admin tasks
-1. Install pkconf and freetype.
+1. Install pkgconf and freetype.
 ```bash
-    pkg install pkconf
+    pkg install pkgconf
     pkg install freetype
 ```
 ## User tasks
