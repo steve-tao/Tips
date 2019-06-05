@@ -25,13 +25,18 @@ Here is a sample **_.kshrc_** script.
 
 alias ls='colorls -GFh'
 
-# Set user's private binary directory
-if [[ $PATH != *$HOME/.local/bin* ]]; then
-   export PATH="$HOME/.local/bin:$PATH"
+# Include user's private bin directory if exists
+if [ -d "$HOME/.local/bin" ]; then
+   if [[ $PATH != *$HOME/.local/bin* ]]; then
+      PATH="$HOME/.local/bin:$PATH"
+   fi
 fi
 
-# Set user's private binary directory
-if [[ $PATH != *$HOME/bin* ]]; then
-    export PATH=$HOME/bin:$PATH
+# Include user's private bin directory if exists
+if [ -d "$HOME/bin" ]; then
+   if [[ $PATH != *$HOME/bin* ]]; then
+      PATH=$HOME/bin:$PATH
+   fi
 fi
+export PATH
 ```
